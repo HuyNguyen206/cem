@@ -1,0 +1,65 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2"
+                        md-component-id="left">
+                <md-toolbar layout="row">
+                    <div class="md-toolbar-tools">
+                        <h2>
+                            <span>Menu chức năng</span>
+                        </h2>
+                        <span flex></span>
+                        <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
+                            <md-tooltip>Đóng</md-tooltip>
+                            <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
+                        </md-button>
+                    </div>
+                </md-toolbar> 
+                <md-content layout-padding="">
+                    <md-list>
+                        <md-subheader class="md-no-sticky">Khảo sát</md-subheader>
+                        <md-list-item>
+                            <md-icon class="md-default-theme" class="material-icons">&#xE0C9;</md-icon>
+                            <p><a href="/#/outbound">Tạo khảo sát</a></p>
+
+                            <!-- <div class="md-secondary">2</div> -->
+                        </md-list-item>
+                        <md-list-item>
+                            <md-icon class="md-default-theme" class="material-icons">&#xE878;</md-icon>
+                            <p><a href="/#/history">Lịch sử khảo sát</a></p>
+                            <!-- <md-icon class="md-secondary">2</md-icon>-->
+                        </md-list-item>
+<!--                        <md-list-item>
+                            <md-icon class="md-default-theme" class="material-icons">&#xE251;</md-icon>
+                            <p>Báo cáo thống kê</p>
+                              <md-icon class="md-secondary">2</md-icon> 
+                        </md-list-item>-->
+                        <md-divider></md-divider>
+                        <md-subheader class="md-no-sticky">Tài khoản</md-subheader>
+<!--                        <md-list-item>
+                            <md-icon class="md-default-theme" class="material-icons">&#xE851;</md-icon>
+                            <p>Đổi mật khẩu</p>
+                             <div class="md-secondary">2</div> 
+                        </md-list-item>
+                        <md-list-item>
+                            <md-icon class="md-default-theme" class="material-icons">&#xE87C;</md-icon>
+                            <p>Thay đổi thông tin cá nhân</p>
+                             <div class="md-secondary">20+</div> 
+                        </md-list-item>-->
+                        <md-list-item>
+                            <md-icon class="md-default-theme" class="material-icons">&#xE87C;</md-icon>
+                            <p><a ng-href="/logout" aria-label="Default Link" 
+                                  href="/logout"><span class="ng-scope">Đăng xuất</span>
+                                </a>
+                            </p>
+                            <!-- <div class="md-secondary">20+</div> -->
+                        </md-list-item>
+                    </md-list>
+                </md-content> 
+            </md-sidenav>
+          <md-button style="left: -6px;width: 32px;height: 32px;    position: absolute;
+    z-index: 9; min-width: 33px;" class="md-button " aria-label="Side Panel"
+                       ng-click="openSideNavPanel()">
+            <span class="icon-plus"></span>
+            </md-button>
+<div class="page-content">
+    <h3 style="text-align: center">Chi tiết khảo sát</h3>    
+<div class="history-detail"></div>
+</div>

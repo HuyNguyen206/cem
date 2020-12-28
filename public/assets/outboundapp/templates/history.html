@@ -1,0 +1,232 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2"
+            md-component-id="left">
+    <md-toolbar layout="row">
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>Menu chức năng</span>
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
+                <md-tooltip>Đóng</md-tooltip>
+                <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar> 
+    <md-content layout-padding="">
+        <md-list>
+            <md-subheader class="md-no-sticky">Khảo sát</md-subheader>
+            <md-list-item>
+                <md-icon class="md-default-theme" class="material-icons">&#xE0C9;</md-icon>
+                <p><a href="/#/outbound">Tạo khảo sát</a></p>
+
+                <!-- <div class="md-secondary">2</div> -->
+            </md-list-item>
+            <md-list-item>
+                <md-icon class="md-default-theme" class="material-icons">&#xE878;</md-icon>
+                <p><a href="/#/history">Lịch sử khảo sát</a></p>
+                <!-- <md-icon class="md-secondary">2</md-icon>-->
+            </md-list-item>
+            <!--                        <md-list-item>
+                                        <md-icon class="md-default-theme" class="material-icons">&#xE251;</md-icon>
+                                        <p>Báo cáo thống kê</p>
+                                          <md-icon class="md-secondary">2</md-icon> 
+                                    </md-list-item>-->
+            <md-divider></md-divider>
+            <md-subheader class="md-no-sticky">Tài khoản</md-subheader>
+            <!--                        <md-list-item>
+                                        <md-icon class="md-default-theme" class="material-icons">&#xE851;</md-icon>
+                                        <p>Đổi mật khẩu</p>
+                                         <div class="md-secondary">2</div> 
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-icon class="md-default-theme" class="material-icons">&#xE87C;</md-icon>
+                                        <p>Thay đổi thông tin cá nhân</p>
+                                         <div class="md-secondary">20+</div> 
+                                    </md-list-item>-->
+            <md-list-item>
+                <md-icon class="md-default-theme" class="material-icons">&#xE87C;</md-icon>
+                <p><a ng-href="/logout" aria-label="Default Link" 
+                      href="/logout"><span class="ng-scope">Đăng xuất</span>
+                    </a>
+                </p>
+                <!-- <div class="md-secondary">20+</div> -->
+            </md-list-item>
+        </md-list>
+    </md-content> 
+</md-sidenav>
+<md-button style="left: -6px;width: 32px;height: 32px;    position: absolute;
+           z-index: 9; min-width: 33px;" class="md-button " aria-label="Side Panel"
+           ng-click="openSideNavPanel()">
+    <span class="icon-plus"></span>
+</md-button>
+
+<div class="page-content">
+    <!--    <?php
+        $controller = 'history';
+        $transfile = $controller;
+        $common = 'common';
+        $prefix = 'dashboard';
+        ?>-->
+    <!-- /.page-header -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+            <form class="form-horizontal" role="form" method="POST" action="http://cem.survey.local/dashboard/history/detail_survey">
+                <!--                {!! csrf_field() !!}-->
+                <div class="col-xs-12" style="    padding-bottom: 16px;">
+<!--                    <div class="col-xs-4">
+                        <label for="search">Số khảo sát trên mỗi trang:</label>
+                        <select ng-model="itemsPerPage" ng-init="itemsPerPage = '20'">
+                            <option value="10">
+                                10
+                            </option>
+                            <option value="20">
+                                20
+                            </option>
+                            <option value="30">
+                                30
+                            </option>
+                            <option value="40">
+                                40
+                            </option>
+                        </select>
+                        <input type="number" min="1" max="100" class="form-control" ng-model="itemsPerPage">
+                    </div>-->
+                    <div class="col-xs-12" style="border-style: groove;    padding: 17px;
+    margin-top: 12px;">
+                        <div class="col-xs-3">
+                            <h5>Ngày bắt đầu</h5>
+                            <md-datepicker ng-model="filters.startDate" ng-init="filters.startDate=startd" md-placeholder="Nhập ngày bắt đầu"></md-datepicker>
+                        </div>
+                        <div class="col-xs-3">
+                            <h5>Ngày kết thúc</h5>
+                            <md-datepicker ng-model="filters.endDate" ng-init="filters.endDate=endd" md-placeholder="Nhập ngày kết thúc"></md-datepicker>
+                        </div>
+                        <div class="col-xs-3">
+                            <h5>Số hợp đồng</h5>
+                            <input class="form-control"  type="text"
+                                   ng-model="filters.contract" style="margin-top: 27px;"  > 
+                        </div>
+                        <div class="col-xs-3">
+                            <h5>Kết quả liên hệ</h5>
+                            <div ng-dropdown-multiselect="" options="data"  selected-model="contactResultf" extra-settings="settings" translation-texts="text" style="cursor: pointer;"></div>
+                        </div>
+                       
+                        <div class="col-xs-12">
+                              <div class="col-xs-3">
+                            <h5>Loại khảo sát</h5>
+                                                      
+                            <div ng-dropdown-multiselect="" options="dataType"  selected-model="typeSurvey" extra-settings="settings" translation-texts="textType" style="cursor: pointer;"></div>
+                        </div>
+                              <div class="col-xs-3">
+                            <h5>Vùng</h5>
+                                                     
+                            <div ng-dropdown-multiselect="" options="dataRegion"  selected-model="region" extra-settings="settings" translation-texts="textRegion" style="cursor: pointer;"></div>
+                        </div>
+                              <div class="col-xs-3">
+                            <h5>Xử lý</h5>
+                                                       
+                            <div ng-dropdown-multiselect="" options="dataAction"  selected-model="action" extra-settings="settings" translation-texts="textAction" style="cursor: pointer;"></div>
+                        </div>
+                              <div class="col-xs-3"><!--
+-->                            <h5>Điểm NPS</h5>
+                                                        
+                            <div ng-dropdown-multiselect="" options="dataNps"  selected-model="pointNps" extra-settings="settings" translation-texts="textNps" style="cursor: pointer;"></div>
+                        </div>
+                              <div class="col-xs-3">
+                            <h5>CSAT NV Kinh Doanh</h5>
+                                                      
+                            <div ng-dropdown-multiselect="" options="dataCsat"  selected-model="pointCsatEmp" extra-settings="settings" translation-texts="textCsat" style="cursor: pointer;"></div>
+                        </div>
+                            <div class="col-xs-3">
+                            <h5>CSAT NV Triển khai </h5>
+                                                      
+                            <div ng-dropdown-multiselect="" options="dataCsat"  selected-model="pointCsatDep" extra-settings="settings" translation-texts="textCsat" style="cursor: pointer;"></div>
+                        </div>
+                            <div class="col-xs-3">
+                            <h5>CSAT Dịch vụ Internet </h5>
+                                                      
+                            <div ng-dropdown-multiselect="" options="dataCsat"  selected-model="pointCsatInt" extra-settings="settings" translation-texts="textCsat" style="cursor: pointer;"></div>
+                        </div>
+                            <div class="col-xs-3">
+                            <h5>CSAT Dịch vụ TV </h5>
+                                                      
+                            <div ng-dropdown-multiselect="" options="dataCsat"  selected-model="pointCsatTv" extra-settings="settings" translation-texts="textCsat" style="cursor: pointer;"></div>
+                        </div>
+                        </div>
+                         <div class="col-xs-12 row">
+                             <button class="md-primary md-raised md-button md-ink-ripple" type="button"  style="font-size: 12px;" ng-click="getSurvey()" aria-label="Hoàn thành khảo sát"><span class="ng-scope"> Tìm kiếm</span><span style="    margin-left: 11px;" class="fa icon-search ng-scope"></span> </button>
+                        </div>
+                       
+                    </div>
+
+                    <!--                    <div class="col-xs-offset-4 col-xs-4">
+                                            <label for="search">Tìm kiếm:</label>
+                                            <input ng-model="q" id="search" class="form-control" placeholder="Filter text">
+                                        </div>-->
+                </div>
+                <div class="bs-component" ng-hide="trigger">
+                    <table border="1" class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Số HĐ</th>
+                                <th>Tên khách hàng</th>
+                                <th>Tình trạng khảo sát</th>
+                                <th>Ghi chú</th>
+                                <th>Xử lý</th>
+                                <th>Loại khảo sát</th>
+                                <th>Người khảo sát</th>
+                                <th>
+                                    <i class="icon-time bigger-110 hidden-480"></i>
+                                    Thời gian hoàn thành
+                                </th>
+                                <th>Chi tiết</th>
+                                <th>Sửa - Khảo sát lại</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-show="do == 3"><td colspan="11" style="text-align:center;">Đang tải dữ liệu mới!!</td></tr>
+                            <!--                            <tr ng-show="users.length > 0&&do==1"><td colspan="11" style="text-align:center;">Đang tải dữ liệu mới!!</td></tr>-->
+                            <tr ng-show="do == 2"><td colspan="11" style="text-align:center;">Không tìm thấy kết quả!!</td></tr>
+                            <tr dir-paginate="user in users|filter:q | itemsPerPage: 50" current-page="currentPage" total-items="total_count">
+                                <td>{{$index + 1}}</td>
+                                <td>{{user.section_contract_num}}</td>
+                                <td>{{user.section_customer_name}}</td>
+                                <td><span ng-show='user.section_connected == 4' class='label label-success arrowed'>Gặp người SD</span><span ng-show='user.section_connected == 0' class='label label-warning'>Không cần liên hệ</span><span ng-show='user.section_connected == 1' class='label label-danger arrowed-in'>Không liên lạc được</span><span ng-show='user.section_connected == 2' class='label label-danger arrowed-in'>Gặp KH, KH từ chối CS</span><span ng-show='user.section_connected == 3' class='label label-danger arrowed-in'>Không gặp người SD</span></td>
+                                <td>{{user.section_note}}</td>
+                                <td ng-bind="action{{user.section_action}}"></td>
+                                <td ng-bind="type{{user.section_survey_id}}"></td>
+                                <td>{{user.section_user_name}}</td>
+                                <td>{{user.section_time_completed}}</td>
+                                <td class="hidden-480">
+
+                                    <!--                                                    <?php if($surveySections->section_survey_id > 0) {//chưa gặp người sử dụng  ?>-->
+                                    <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+                                        <a href="/#/history/detail/{{user.section_contract_num}}/{{user.section_id}}" class="open-tooltip" role="button" data-toggle="modal" title="Chi Tiết"><button class="btn btn-xs btn-info"><i class="icon-folder-open bigger-120"></i></button></a>
+                                    </div>
+                                    <!--                                                    <?php } ?>-->
+                                </td>
+                                <td><span ng-show="{{ user.edit == 2}}">Quá thời gian cho sửa quy định</span><a href="/#/survey/edit/{{user.section_id}}" ng-show="{{ user.edit == 1}}"><button class="btn btn-xs btn-info"><i class="icon-edit bigger-120"></i></button></a>&nbsp;&nbsp;&nbsp;<span ng-show="{{ user.retry == 2}}">Quá thời gian cho khảo sát lại quy định</span><a href="/#/survey/retry/{{user.section_id}}" ng-show="{{ user.retry == 1}}"><button class="btn btn-xs btn-info"><i class="icon-undo bigger-120"></i></button></a></td>                               
+                            </tr>
+                        </tbody>
+                    </table> 
+                    <dir-pagination-controls
+                        max-size="10"
+                        direction-links="true"
+                        boundary-links="true" 
+                        on-page-change="getData(newPageNumber)" >
+                    </dir-pagination-controls>
+                </div>
+                <!--                <div ui-view></div>-->
+            </form>
+            <!-- PAGE CONTENT ENDS -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+    <input style="color: white !important" type="button" id="btnBack" class="btn-primary" ng-click="returnClick()" value="Quay về màn hình khảo sát" />
+</div><!-- /.page-content -->
+
+
+

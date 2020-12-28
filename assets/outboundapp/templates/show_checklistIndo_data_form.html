@@ -1,0 +1,64 @@
+<md-dialog aria-label="Thông tin checklist"  ng-cloak style="    width: 1076px;
+    height: 700px;">
+    <form name="form_contact" required novalidate>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Xử lý checklist INDO</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="hide()">
+                    <md-tooltip>Đóng</md-tooltip>
+                    <md-icon class="md-default-theme material-icons">&#xE5CD;</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content style="margin-top: -30px;">
+            <md-button style="font-size: 12px;   margin: 36px 0px 0px 17px;" class="md-primary md-raised"
+                       ng-click="triggerCL()" ng-disabled="checked" >Tạo Checklist<span
+                    class="fa fa-send"></span> </md-button>
+            <div ng-show="showed">
+            <h3 style="text-align: CENTER;
+                margin-top: 13px;">Danh sách các checklist</h3>
+            <div class="md-dialog-content">
+                <!--                  <table border="1" class="table table-striped"
+                                               ng-repeat="h in history| filter:query as filtered">-->
+                <div ng-repeat="s in SCL| filter:query as filtered" style="margin-bottom: 20px;    border: 1px solid;">
+                    <span>{{$index + 1}}</span>
+                    <table ng-class="(s.onCom==true ? 'compelete' :'OnGoing')" border='1' cellspacing="2" style="    text-align: center;" >
+                        <tr><td>SMS</td><td>{{s.MobilePhone}}</td><td>Ngày gọi Complain</td><td >{{s.LastCall}}</td><td>Tổ con của đối tác phân công lần 2</td><td> {{s.SubSupporter2}}</td><td>Tên loại khách hàng</td><td >{{s.CusFormName}}</td><td>Cáp Indoor</td><td>{{s.IDCLength}}</td></tr>
+                        <tr><td>Mã checklist</td><td> {{s.ID}}</td><td>Phân công đối tác xử lý lần 1+</td><td> {{s.Supporter}}</td><td>Tổ con của đối tác phân công lần 3</td><td >{{s.SubSupporter3}}</td><td>Loại dịch vụ+</td><td >{{s.LocalType}}</td><td>Cáp outdoor</td><td >{{s.ODCLength}}</td></tr>
+                        <tr><td>Mã khách hàng</td><td >{{s.ObjID}}</td><td>Đối tác xử lý lần 2</td><td >{{s.Supporter1}}</td><td>Ngày đóng checklist</td><td >{{s.CusCloseDate}}</td><td>Tên loại dịch vụ</td><td> {{s.LocalTypeName}}</td><td>VIP</td><td> {{s.Vip}}</td></tr>
+                        <tr><td>Người nhập</td><td >{{s.CreateBy}}</td><td>Đối tác xử lý lần 3</td><td >{{s.Supporter2}}</td><td>Ý kiến khách hàng</td><td> {{s.CusDesc}}</td><td>Điện thoại+</td><td >{{s.Location_Phone}}</td><td>HOT</td><td> {{s.HOT}}</td></tr>
+                        <tr><td>Ngày tạo checklist</td><td> {{s.ADate}}</td><td>Đối tác xử lý lần 4</td><td>{{s.Supporter3}}</td><td>Lý do FPT đóng</td><td> {{s.CloseCLDesc}}</td><td>Số hợp đồng</td><td>{{s.Contract}}</td><td>Tên của Final_Status</td><td> {{s.Final_Status_Desc}}</td></tr>
+                        <tr><td>Tình trạng</td><td >{{s.Status}}</td><td>Ghi chú ban đầu</td><td >{{s.Init_Desc}}</td><td>Tình trạng khách hàng</td><td> {{s.CusStatus}}</td><td>Tên khách hàng</td><td>{{s.FullName}}</td><td>Ghi chú</td><td>{{s.Final_Desc}}</td></tr>
+                        <tr><td>Tình trạng sự cố ban đầu</td><td> {{s.Init_Status}}</td><td>Tình trạng</td><td> {{s.Now_Status1}}</td><td>Khách hàng đóng checklist</td><td>{{s.CloseCLMethod}}</td><td>Tập điểm</td><td>{{s.ODCCableType}}</td></tr>
+                        <tr><td>Tên sự cố ban đầu</td><td>{{s.Init_Status_Name}}</td><td>Tình trạng</td><td>{{s.Now_Status2}}</td><td>Checklist khẩn</td><td> {{s.Urgent}}</td><td>Địa chỉ lắp đặt</td><td>{{s.Address}}</td></tr>
+                        <tr><td>Tình trạng</td><td> {{s.Final_Status}}</td><td>Tình trạng</td><td>{{s.Now_Status3}}</td><td>Ngày tạo checklist khẩn</td><td>{{s.CLDate}}</td><td>TS thi công</td><td>{{s.AreaID}}</td></tr>
+                        <tr><td>Ghi chú</td><td> {{s.Description}}</td><td>Kết quả xử lý lần 1</td><td> {{s.Result1}}</td><td>Người đóng checklist</td><td> {{s.StaffName}}</td><td>Vùng miền</td><td>{{s.LocationID}}</td></tr>
+                        <tr><td>Ngày phân công nhân viên</td><td> {{s.AssignDate}}</td><td>Kết quả xử lý lần 2</td><td>{{s.Result2}}</td><td>Tên truy cập+</td><td>{{s.Name}}</td><td>Quận bảo trì</td><td>{{s.Support_District}}</td></tr>
+                        <tr><td>Ngày đóng checklist</td><td> {{s.FinishDate}}</td><td>Kết quả xử lý lần 3</td><td>{{s.Result3}}</td><td>Địa chỉ lắp đặt</td><td>{{s.Location}}</td><td>Quận trong địa chỉ lắp đặt của khách</td><td>{{s.Location_District}}</td></tr>
+                        <tr><td>Vị trí xảy ra kết quả xử lý</td><td> {{s.SupportStatus}}</td><td>Kết quả xử lý lần 4</td><td>{{s.Result4}}</td><td>Chi nhánh</td><td>{{s.BranchCode}}</td><td>Thông tin khuyến mãi</td><td>{{s.Promotion}}</td></tr>
+                        <tr><td>Độ ưu tiên</td><td> {{s.Priority}}</td><td>Ngày hẹn bảo trì</td><td>{{s.AppointmentDate}}</td><td>Người liên hệ+</td><td> {{s.Location_Name}}</td><td>Truy cập lần đầu</td><td> {{s.FirstAccess}}</td></tr>
+                        <tr><td>Số lần complain</td><td>{{s.TotalCall}}</td><td>Tổ con của đối tác phân công lần 1</td><td >{{s.SubSupporter1}}</td><td>Loại khách hàng</td><td>{{s.CusForm}}</td><td>Thông tin hỗ trợ onsite</td><td>{{s.SupportDay}}</td></tr>
+                    </table>
+                </div>
+            </div>
+            </div>
+        </md-dialog-content>
+
+    </form>
+</md-dialog>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+    table tbody{
+        font-size: 12px;
+    }
+       .compelete{
+        background-color: aquamarine;; 
+    }
+    .OnGoing{
+         background-color: azure;;
+    }
+</style>

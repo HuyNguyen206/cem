@@ -1,0 +1,70 @@
+<md-dialog aria-label="Thông tin Prechecklist"  ng-cloak style="    width: 1076px;
+           height: 700px;">
+    <form name="form_contact" required novalidate>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Xử lý Prechecklist</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="hide()">
+                    <md-tooltip>Đóng</md-tooltip>
+                    <md-icon class="md-default-theme material-icons">&#xE5CD;</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content style="margin-top: -30px;">
+            <md-button style="font-size: 12px;   margin: 36px 0px 0px 17px;" class="md-primary md-raised"
+                       ng-click="triggerCL()" ng-disabled="checked" >Tạo PreChecklist<span
+                    class="fa fa-send"></span> </md-button>
+            <div ng-show="showed">
+                <h3 style="text-align: CENTER;
+                    margin-top: 13px;">Danh sách các Prechecklist</h3>
+                <div class="md-dialog-content">
+                    <!--                  <table border="1" class="table table-striped"
+                                                   ng-repeat="h in history| filter:query as filtered">-->
+                    <div  style="margin-bottom: 20px;    border: 1px solid;">
+                        <table border='1' cellspacing="2" style="    text-align: center;" >
+                            <tr ng-class="(s.onCom==true ? 'compelete' :'OnGoing')" >
+                                <th>STT</th>
+                                <th>ID Prechecklist</th>
+                                <th>ID hợp đồng</th>
+                                <th>Số hợp đồng</th>
+                                <th>Loại khách hàng VIP</th>
+                                <th>Người liên hệ</th>
+                                <th>Tình trạng</th>
+                                <th>Thông tin ghi nhận</th>
+                                <th>Số lần hỗ trợ</th>
+                                <th>Tình trạng</th>
+                                <th>NV ghi nhận</th>
+                                <th>Thời gian ghi nhận</th>
+                                <th>Thời gian xử lý</th>
+                                <th>Thời gian hẹn</th>
+                                <th>Tổng số phút</th>
+                                <th>Có Checklist hay không(0: không có checklist; 1: có checklist) </th>
+                                <th>Nguồn tạo </th>
+                                <th>Ghi chú</th>
+                            </tr>
+                            <tr ng-repeat="s in SPCL| filter:query as filtered" ><td>{{$index + 1}}</td><td>{{s.ID}}</td><td>{{s.ObjID}}</td><td>{{s.Contract}}</td><td>{{s.TypeVIP}}</td><td>{{s.Location_Name}}</td><td>{{s.Status}}</td><td>{{s.SupDescription}}</td><td>{{s.CountSup}}</td><td>{{s.SupStatus}}</td><td>{{s.CreateBy}}</td><td>{{s.CreateDate}}</td><td>{{s.UpdateDate}}</td><td>{{s.AppointmentTimer}}</td><td>{{s.TotalMinute}}</td><td>{{s.Checklist}}</td><td>{{s.InputType}}</td><td>{{s.Description}}</td></tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </md-dialog-content>
+
+    </form>
+</md-dialog>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+    table tbody{
+        font-size: 12px;
+    }
+    .compelete{
+        background-color: aquamarine;; 
+    }
+    .OnGoing{
+        background-color: azure;;
+    }
+</style>

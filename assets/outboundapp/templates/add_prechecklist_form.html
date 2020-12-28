@@ -1,0 +1,100 @@
+<md-dialog aria-label="Thông tin checklist"  ng-cloak>
+    <form name="form_contact" required novalidate>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Tạo Prechecklist </h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="hide()">
+                    <md-tooltip>Đóng</md-tooltip>
+                    <md-icon class="md-default-theme material-icons">&#xE5CD;</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content" style="white-space: normal !important;">
+                <!--                <md-input-container readonly="true" style='       padding: 0px;
+                                                    margin: 0px;
+                                                    height: 38px;
+                                                    '>-->
+                <div class="col-xs-12"  style="margin-top: 11px;">
+                    <div class="col-xs-3">
+                        Người liên hệ:
+                    </div>
+                    <div class="col-xs-7">
+                        <input size="50" required ng-model="CL.Location_Name" name="Location_Name" placeholder="Người liên hệ">
+                    </div>
+                    <div style="color: red" class="col-xs-offset-3 col-xs-7 row" ng-show="contactflag == 1 && !CL.Location_Name" ng-init="contactflag = 0">Vui lòng nhập tên người liên hệ</div>
+                </div>
+                <div class="col-xs-12" style="margin-top: 16px;">
+                    <div class="col-xs-3">
+                        Số điện thoại người liên hệ:
+                    </div>
+                    <div class="col-xs-7">
+                        <input size="50" required ng-model="CL.Location_Phone" name="Location_Phone" placeholder="Số điện thoại người liên hệ">
+                    </div>
+                         <div style="color: red" class="col-xs-offset-3 col-xs-7 row" ng-show="phoneflag == 1 && !CL.Location_Phone" ng-init="phoneflag = 0">Vui lòng nhập số điện thoại người liên hệ</div>
+                </div>
+                <!--                    <div ng-show="form_contact.contactName.$dirty && form_contact.contactName.$invalid">
+                                        <div ng-message="required" ng-show="form_contact.contactName.$error.required">Người tạo</div>
+                                    </div>-->
+                <!--</md-input-container>-->
+                <div class="col-xs-12" style="margin-top: 16px;">
+                    <div class="col-xs-3" style="   padding-left: 16px;">Ghi nhận sự cố ban đầu</div>
+                    <div class="col-xs-7">
+                        <md-select style='    padding: 0px;
+                                   margin: 0px;    margin-top: -4px;
+                                   ' name="incident_note" ng-model="CL.FirstStatus" placeholder="Chọn loại sự cố..." required>
+                            <md-option ng-value="5">Yeu cau nhap Checklist</md-option>
+                            <md-option ng-value="1">Mat ket noi</md-option>
+                            <md-option ng-value="6">IPTV</md-option>
+                            <md-option ng-value="7">Wifi</md-option>
+                            <md-option ng-value="2">Mang cham</md-option>
+                            <md-option ng-value="3">Mang chap chon</md-option>
+                            <md-option ng-value="4">Tinh trang khac</md-option>
+                        </md-select>
+                    </div>
+                       <div style="color: red" class="col-xs-offset-3 col-xs-7 row" ng-show="incidentflag == 1 && !CL.FirstStatus" ng-init="incidentflag = 0">Vui lòng chọn sự cố ban đầu</div>
+                </div>
+                <div class="col-xs-12" style="margin-top: 16px;">
+                    <div class="col-xs-3" style="    padding-left: 16px;">Phòng ban tạo PreChecklist</div>
+                    <div class="col-xs-7">
+                        <md-select style='    padding: 0px;
+                                   margin: 0px;    margin-top: -14px;
+                                   ' name="department_choose" ng-model="CL.DivisionID" ng-init="CL.DivisionID = 43" placeholder="Chọn phòng ban..." required>
+                            <md-option ng-value="4">IBB</md-option>
+                            <md-option ng-value="7">CUS</md-option>
+                            <md-option ng-value="43">CS-HO</md-option>
+                            <md-option ng-value="430">CS-CN</md-option>
+                            <md-option ng-value="39">Telesales</md-option>
+                        </md-select>
+                    </div>
+                       <div style="color: red" class="col-xs-offset-3 col-xs-7 row" ng-show="departmentflag == 1 && !CL.DivisionID" ng-init="departmentflag = 0">Vui lòng chọn phòng ban tạo Prechecklist</div>
+                </div>
+                <div class="col-xs-12" style="margin-top: 15px">
+                    <div class="col-xs-2">Ghi chú</div>
+                    <div class="col-xs-7" style="padding-left: 99px;">
+                        <textarea style="width: 541px" placeholder="Ghi chú" ng-model="CL.Description"></textarea>
+                    </div>
+                      <div style="color: red" class="col-xs-offset-3 col-xs-7 row" ng-show="noteflag == 1 && !CL.Description" ng-init="noteflag = 0">Vui lòng nhập ghi chú</div>
+                </div>
+
+                <div class="col-xs-12" style="margin-top: 17px;">
+                    <div class="col-xs-3">
+                        Người nhập PreChecklist:
+                    </div>
+                    <div class="col-xs-7">
+                        <input readonly="true" size="50" required ng-model="CL.CreateBy" name="CreateBy" placeholder="Người nhập PreChecklist">
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <md-button ng-click="sendCL()" class="md-primary md-raised" style="margin-right:20px;">
+                        Tạo PreCheckList
+                    </md-button>
+                </div>
+                <input type="hidden" ng-model="CL.ObjID">
+            </div>
+        </md-dialog-content>
+
+    </form>
+</md-dialog>

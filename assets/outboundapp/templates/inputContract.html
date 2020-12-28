@@ -1,0 +1,122 @@
+<md-dialog aria-label="Hướng dẫn chấm điểm"  ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Hướng dẫn chấm điểm</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="assets/outboundapp/images/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+      <div class="modal-content">
+
+                    <div class="modal-body">
+                        <table border="1" class="col-xs-12 table-support">
+                            <tr>
+                                <td style="font-weight: bold;" colspan="5">Nắm bắt các key word
+                                    của khách hàng</td>
+                            </tr>
+                            <tr class="center">
+                                <td>Rất không hài lòng</td>
+                                <td>Không hài lòng</td>
+                                <td>Trung lập</td>
+                                <td>Hài lòng</td>
+                                <td>Rất hài lòng</td>
+                            </tr>
+                            <tr class="red-number">
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Quá tệ</td>
+                                <td>Hơi tệ</td>
+                                <td>Bình thường</td>
+                                <td>tốt</td>
+                                <td>tốt lắm</td>
+                            </tr>
+                            <tr>
+                                <td>chán lắm</td>
+                                <td>Hơi chán</td>
+                                <td>Không vấn đề</td>
+                                <td>OK</td>
+                                <td>Rất tốt</td>
+                            </tr>
+                            <tr>
+                                <td>quá chán/ quá chậm</td>
+                                <td>Chậm</td>
+                                <td>Không có ý kiến</td>
+                                <td>Khá/ khá phết</td>
+                                <td>Rất thích</td>
+                            </tr>
+                            <tr>
+                                <td>rất tệ/ rất kém</td>
+                                <td>Tệ</td>
+                                <td>Cũng tàm tạm</td>
+                                <td>Được</td>
+                                <td>quá tốt</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Chán</td>
+                                <td></td>
+                                <td>Cũng tốt</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Cũng khá</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;" colspan="5">Ngoài ra, Người phỏng
+                                    vấn đánh giá thái độ của khách hàng nội dung tổng thể, tốc độ
+                                    nói, âm lượng, quãng dừng nghỉ (phụ thuộc vào kinh nghiệm của
+                                    người phỏng vấn) để đưa ra quyết định tính điểm được chính xác
+                                    hơn</td>
+
+                            </tr>
+                            <tr>
+                                <td>KH gay gắt, tức giận, to tiếng</td>
+                                <td>KH lạnh nhạt, không hứng thú, không vui vẻ</td>
+                                </td>
+                                <td>KH không thể hiện thái độ gì đặc biệt</td>
+                                <td>KH thoải mái, vui vẻ</td>
+                                <td>KH vui vẻ, khen ngợi</td>
+                            </tr>
+                            <tr>
+                                <td>KH diễn giải chi tiết hành động không tốt của FTEL với thái
+                                    độ gay gắt</td>
+                                <td>KH nói qua về hành động không tốt của FTEL</td>
+                                <td>KH nói không nhớ, hoặc không ấn tượng</td>
+                                <td>KH nói qua về hành động khiến họ hài lòng của FTEL khi được
+                                    khơi gợi</td>
+                                <td>KH chủ động khen ngợi, miêu tả ấn tượng tốt về FTEL</td>
+                            </tr>
+                            <tr>
+                                <td>KH liên tục chỉ trích</td>
+                                <td>KH thỉnh thoảng có lời chê</td>
+                                <td>KH không khen ngợi, cũng không chê bai</td>
+                                <td>KH thỉnh thoảng có lời khen</td>
+                                <td>KH lặp lại lời khen nhiều lần</td>
+                            </tr>
+
+
+                        </table>
+                    </div>
+
+                </div>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">      
+      <md-button ng-click="closeUserGuidePoint()" style="margin-right:20px;">Đóng</md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

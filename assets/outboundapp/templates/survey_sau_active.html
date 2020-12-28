@@ -1,0 +1,391 @@
+<div class="">
+    <div  id="question10" ng-show="ContractTypeName" class="panel panel-default panel-default-me">
+
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <span class="fa fa-question-circle"></span> <span class="question-title">Câu 1.a</span>: Sau khi được kỹ thuật đến lắp đặt, Anh/Chị sử dụng<b> dịch vụ Internet</b> có được hài lòng không ạ? <span class="readmore-link"> <a
+                        class="ketchup tooltip-self"
+                        title="Đánh giá mức độ hài lòng về chất lượng dịch vụ Internet:                    
+                        CS: Sau khi được kỹ thuật đến lắp đặt, Anh/Chị sử dụng dịch vụ có được hài lòng không ạ
+                        Nếu KH chưa rõ câu hỏi, CS có thể  gợi ý thêm:
+                        -          Anh/Chị sử dụng dịch vụ có ổn định không, tốc độ có phù hợp không ạ?
+                        -          Truyền hình Anh/Chị xem có tốt không, có nét không ạ? Chức năng xem lại anh/ chị thấy có thú vị không ạ?
+                        -          Anh/Chị có cần hỗ trợ hoặc yêu cầu gì thêm không ạ?
+                        ">Xem Thêm</a>
+                </span>
+                <input type="hidden" name="" ng-init="survey.questionid_10 = 10"  ng-model="survey.questionid_10" value="1">
+            </h3>
+        </div>
+        <div class="panel-body two-col">
+            <div  name="radio-survey-1" ng-init="survey.answer10" class="radio-survey col-xs-12">
+                <div md-theme="customTheme" class="col-xs-3">
+                    <md-checkbox ng-model="survey.answer10"  class="survey-question answer10 md-warn md-hue-2 "  ng-true-value="'1'" /><img class="emo-resize" style="width: 20px;" src="assets/img/Point_01.png">Rất không hài lòng(1)</md-checkbox>
+                </div>
+                <div md-theme="customTheme" class="col-xs-3">
+                    <md-checkbox  ng-model="survey.answer10"  class="survey-question answer10 md-warn md-hue-1 "  ng-true-value="'2'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_02.png">Không hài lòng(2)</md-checkbox>
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox  ng-model="survey.answer10"  class="survey-question answer10  md-warn md-hue-1"  ng-true-value="'3'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_03.png">Trung lập(3)</md-checkbox>
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox ng-model="survey.answer10"  class="survey-question answer10  md-warn md-hue-1  "  ng-true-value="'4'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_04.png">Hài lòng(4)</md-checkbox>
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox ng-model="survey.answer10"  class="survey-question answer10  md-primary md-hue-2 "   ng-true-value="'5'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_05.png">Rất hài lòng(5)</md-checkbox>
+                </div>
+                <!--                            <input type="radio" ng-model="checked" value="500" ng-click="uncheck($event)" />
+                        <input type="radio" ng-model="checked" value="1000" ng-click="uncheck($event)" />
+                        <input type="radio" ng-model="checked" value="1500" ng-click="uncheck($event)" />-->
+
+                <!--</md-radio-group>-->
+            </div>
+             <div class="col-xs-6" style="padding-top: 16px">
+                <div class="col-xs-2" style="padding-top: 17px;"><span class="question-title">Ghi chú</span></div>
+                <div class="col-xs-7" style="margin-left: -26px;">
+                    <textarea ng-model="survey.subnote10"  class="note-survey" style="    width: 487px;"></textarea>
+                </div>
+            </div>
+                <div class="col-xs-5" style="margin-left: 39px;">
+                <div class="col-xs-4 question-title" style="padding:28px 0px 0px 0px;">Lý do không đánh giá được</div>
+                <md-select ng-model="survey.extraQuestion10" ng-disabled="survey.answer10&&survey.answer10!=-1" ng-init="survey.extraQuestion10" class="eva-score-answer col-xs-8" placeholder="--Chọn lý do--">
+                    <md-option  value="33">KH chưa kiểm tra lại dịch vụ (vắng nhà, đi công tác…)</md-option>
+                    <md-option  value="34">KH cần theo dõi thêm</md-option>
+                    <md-option  value="35">KH bận không đánh giá</md-option>
+                    <md-option  value="36">KH khiếu nại, gay gắt về sự việc khác</md-option>
+                </md-select>
+            </div>
+        </div>
+
+    </div>
+    <div id="question11"  ng-show="PackageSal" class="panel panel-default panel-default-me">
+
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <span class="fa fa-question-circle"></span> <span class="question-title">Câu 1.b</span>: Sau khi được kỹ thuật đến lắp đặt, Anh/Chị sử dụng <b>dịch vụ truyền hình</b> có được hài lòng không ạ? <span class="readmore-link"> <a
+                        class="ketchup tooltip-self"
+                        title="Đánh giá mức độ hài lòng về chất lượng dịch vụ truyền hình:
+                        CS: Sau khi được kỹ thuật đến lắp đặt, Anh/Chị sử dụng dịch vụ có được hài lòng không ạ
+                        Nếu KH chưa rõ câu hỏi, CS có thể  gợi ý thêm:
+                        -          Anh/Chị sử dụng dịch vụ có ổn định không, tốc độ có phù hợp không ạ?
+                        -          Truyền hình Anh/Chị xem có tốt không, có nét không ạ? Chức năng xem lại anh/ chị thấy có thú vị không ạ?
+                        -          Anh/Chị có cần hỗ trợ hoặc yêu cầu gì thêm không ạ?
+                        ">Xem Thêm</a>
+                </span>
+                <input type="hidden" name="" ng-init="survey.questionid_11 = 11"  ng-model="survey.questionid_11" value="11">
+            </h3>
+        </div>
+        <div class="panel-body two-col">
+            <div name="radio-survey-2" ng-init="survey.answer11" class="radio-survey col-xs-12">
+                <div  md-theme="customTheme" class="col-xs-3">
+                    <md-checkbox ng-model="survey.answer11"  class="survey-question answer11 md-warn md-hue-2"  ng-true-value="'1'" /><img class="emo-resize" style="width: 20px;" src="assets/img/Point_01.png">Rất không hài lòng(1)</md-checkbox>
+                </div>
+                <div  md-theme="customTheme" class="col-xs-3">
+                    <md-checkbox  ng-model="survey.answer11"  class="survey-question answer11 md-warn md-hue-1"  ng-true-value="'2'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_02.png">Không hài lòng(2)</md-checkbox>
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox  ng-model="survey.answer11"  class="survey-question answer11 md-warn md-hue-1"   ng-true-value="'3'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_03.png">Trung lập(3)</md-checkbox>
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox ng-model="survey.answer11"  class="survey-question answer11 md-warn md-hue-1"   ng-true-value="'4'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_04.png">Hài lòng(4)</md-checkbox>
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox ng-model="survey.answer11"  class="survey-question answer11 md-primary md-hue-2"  ng-true-value="'5'"/><img class="emo-resize"  style="width: 20px;" src="assets/img/Point_05.png">Rất hài lòng(5)</md-checkbox>
+                </div>
+            </div>
+             <div class="col-xs-6" style="padding-top: 16px">
+                <div class="col-xs-2" style="padding-top: 17px;"><span class="question-title">Ghi chú</span></div>
+                <div class="col-xs-7" style="margin-left: -26px;">
+                    <textarea ng-model="survey.subnote11"  class="note-survey" style="    width: 487px;"></textarea>
+                </div>
+            </div>
+                <div class="col-xs-5" style="margin-left: 39px;">
+                <div class="col-xs-4 question-title" style="padding:28px 0px 0px 0px;">Lý do không đánh giá được</div>
+                <md-select ng-model="survey.extraQuestion11" ng-disabled="survey.answer11&&survey.answer11!=-1" ng-init="survey.extraQuestion11" class="eva-score-answer col-xs-8" placeholder="--Chọn lý do--">
+                    <md-option  value="33">KH chưa kiểm tra lại dịch vụ (vắng nhà, đi công tác…)</md-option>
+                    <md-option  value="34">KH cần theo dõi thêm</md-option>
+                    <md-option  value="35">KH bận không đánh giá</md-option>
+                    <md-option  value="36">KH khiếu nại, gay gắt về sự việc khác</md-option>
+                </md-select>
+            </div>
+        </div>
+
+    </div>
+    <div class="panel panel-default panel-default-me">
+
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <span class="fa fa-question-circle"></span> <span class="question-title">Câu 2</span>: Anh/Chị có hài lòng về <b>nhân viên kỹ thuật</b> vừa đến lắp đặt dịch vụ không ạ? <span class="readmore-link"> <a
+                        class="ketchup tooltip-self"
+                        title="“… có lắp đặt theo đúng thời gian đã hẹn không ạ?”; “phục vụ có chu đáo không ạ?”; “có tư vấn hướng dẫn sử dụng dịch vụ sau lắp đặt không ạ?” …">Xem Thêm</a>
+                </span>
+                <input type="hidden" name="" ng-init="survey.questionid_2 = 2" ng-model="survey.questionid_2" value="2">
+            </h3>
+        </div>
+        <div class="panel-body two-col">
+            <div name="radio-survey-3" ng-init="survey.answer2" class="radio-survey col-xs-12">
+                <div md-theme="customTheme" class="col-xs-3 ">
+                    <md-checkbox ng-model="survey.answer2"  class="survey-question answer2 md-warn md-hue-2"  ng-true-value="'1'" /><img class="emo-resize" style="width: 20px;" src="assets/img/Point_01.png">Rất không hài lòng(1)</md-checkbox>
+                </div>
+                <div md-theme="customTheme" class="col-xs-3">
+                    <md-checkbox  ng-model="survey.answer2"  class="survey-question answer2 md-warn md-hue-1"  ng-true-value="'2'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_02.png">Không hài lòng(2)</md-checkbox>
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox  ng-model="survey.answer2"  class="survey-question answer2 md-warn md-hue-1"   ng-true-value="'3'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_03.png">Trung lập(3)</md-checkbox>
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox ng-model="survey.answer2"  class="survey-question answer2 md-warn md-hue-1"   ng-true-value="'4'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_04.png">Hài lòng(4)</md-checkbox>
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox ng-model="survey.answer2"  class="survey-question answer2 md-primary md-hue-2"   ng-true-value="'5'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_05.png">Rất hài lòng(5)</md-checkbox>
+                </div>
+
+            </div>
+            <div class="col-xs-6" style="padding-top: 16px">
+                <div class="col-xs-2" style="padding-top: 17px;"><span class="question-title">Ghi chú</span></div>
+                <div class="col-xs-7" style="margin-left: -26px;">
+                    <textarea ng-model="survey.subnote2"  class="note-survey" style="    width: 487px;"></textarea>
+                </div>
+            </div>
+                <div class="col-xs-5" style="margin-left: 39px;">
+                <div class="col-xs-4 question-title" style="padding:28px 0px 0px 0px;">Lý do không đánh giá được</div>
+                <md-select ng-model="survey.extraQuestion2" ng-disabled="survey.answer2&&survey.answer2!=-1" ng-init="survey.extraQuestion2" class="eva-score-answer col-xs-8" placeholder="--Chọn lý do--">
+                    <md-option  value="37">KH không gặp trực tiếp KTV</md-option>
+                    <md-option  value="38">KH báo không có KTV xuống bảo trì</md-option>
+                    <md-option  value="41">KH bận không đánh giá</md-option>
+                    <md-option  value="43">KH khiếu nại, gay gắt về sự việc khác</md-option>
+                </md-select>
+            </div>
+        </div>
+
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <span class="fa fa-question-circle"></span> <span class="question-title">Câu 3</span>: Vậy Anh/Chị có hài lòng về <b>nhân viên kinh doanh</b> của FPT Telecom không ạ? <span class="readmore-link"> <a
+                        class="ketchup tooltip-self"
+                        title='"
+CS: Anh/Chị có hài lòng về thái độ phục vụ của nhân viên kinh doanh của FPT không ạ?
+CS: Nhân viên kinh doanh có tư vấn, hướng dẫn chi tiết cho Anh/Chị không ạ?
+Khách hàng: Có
+CS: Chuyển câu 5
+Khách hàng: Chưa rõ
+CS: cung cấp lại thông tin gói cước, tốc độ, chương trình khuyến mại…
+"'>Xem Thêm</a>
+                </span>
+                <input type="hidden" name="" ng-init="survey.questionid_1 = 1" ng-model="survey.questionid_1" value="1">
+            </h3>
+        </div>
+        <div class="panel-body two-col">
+            <div name="radio-survey-4" ng-init="survey.answer1" class="radio-survey col-xs-12">
+                <div md-theme="customTheme" class="col-xs-3">
+                    <md-checkbox ng-model="survey.answer1"  class="survey-question answer1 md-warn md-hue-2"   ng-true-value="'1'" /><img class="emo-resize" style="width: 20px;" src="assets/img/Point_01.png">Rất không hài lòng(1)</md-checkbox>
+                </div>
+                <div md-theme="customTheme" class="col-xs-3">
+                    <md-checkbox  ng-model="survey.answer1"  class="survey-question answer1 md-warn md-hue-1"  ng-true-value="'2'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_02.png">Không hài lòng(2)</md-checkbox>
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox  ng-model="survey.answer1"  class="survey-question answer1 md-warn md-hue-1"   ng-true-value="'3'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_03.png">Trung lập(3)</md-checkbox>
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox ng-model="survey.answer1"  class="survey-question answer1 md-warn md-hue-1"   ng-true-value="'4'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_04.png">Hài lòng(4)</md-checkbox>
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox ng-model="survey.answer1"  class="survey-question answer1 md-primary md-hue-2"   ng-true-value="'5'"/><img class="emo-resize" style="width: 20px;" src="assets/img/Point_05.png">Rất hài lòng(5)</md-checkbox>
+                </div>
+            </div>
+                <div class="col-xs-6" style="padding-top: 16px">
+                <div class="col-xs-2" style="padding-top: 17px;"><span class="question-title">Ghi chú</span></div>
+                <div class="col-xs-7" style="margin-left: -26px;">
+                    <textarea  ng-model="survey.subnote1"  class="note-survey" style="    width: 487px;"></textarea>
+                </div>
+            </div>
+                <div class="col-xs-5" style="margin-left: 39px;">
+                <div class="col-xs-4 question-title" style="padding:28px 0px 0px 0px;">Lý do không đánh giá được</div>
+                <md-select ng-model="survey.extraQuestion1" ng-disabled="survey.answer1&&survey.answer1!=-1" ng-init="survey.extraQuestion1" class="eva-score-answer col-xs-8" placeholder="--Chọn lý do--" >
+                    <md-option  value="39">Không cần hỏi ( KH CDD, CDV, đăng kí thêm dịch vụ )</md-option>
+                    <md-option  value="40">Không gặp trực tiếp nhân viên kinh doanh</md-option>
+                    <md-option  value="42">KH bận không đánh giá</md-option>
+                    <md-option  value="44">KH khiếu nại, gay gắt về sự việc khác</md-option>
+                </md-select>
+            </div>
+        </div>
+
+    </div>
+    <div ng-hide ="NPS" class="panel panel-default eva-score">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <span class="fa fa-question-circle"></span> <span class="question-title">Câu 4</span>: Để có thể đánh giá được sự ủng hộ của Anh/Chị với FPT Telecom, với mục đích phục vụ Anh/ chị được tốt hơn, Anh/Chị vui lòng cho em biết khả năng Anh/Chị sẵn sàng giới thiệu dịch vụ của FPT Telecom đến bạn bè, người thân là bao nhiêu điểm, trên thang điểm từ 0 đến 10, được không ạ.? <span
+                    class="readmore-link"> <a class="ketchup tooltip-self"
+                                          title='"Đây là câu hỏi mang tính khảo sát để đánh giá sự ủng hộ của Anh/Chị với FPT Telecom thôi ạ", "Nếu Anh/Chị đánh giá 9 điểm thì có nghĩa là Anh/chị đang rất ủng hộ FPT", "Nếu Anh/Chị đánh giá 0 điểm thì có nghĩa là Anh/chị đang hoàn toàn không ủng hộ ạ"'>Xem Thêm</a>
+                </span>
+                <input type="hidden" name="" ng-init="survey.questionid_5 = 5" ng-model="survey.questionid_5" value="5">
+            </h3>
+        </div>
+        <div class="panel-body two-col">
+            <div name="radio-survey-5" ng-init="survey.answer6" class="radio-survey ">
+                <!--<md-radio-group ng-model="survey.answer6">-->
+                <div class="row" style="margin-left: 15px;">
+                    <div class="col-xs-1">
+                        <a class="ketchup"
+                           title='"Khách hàng không ủng hộ"'>
+                            <md-checkbox class="survey-question score answer6" ng-model="survey.answer6"   ng-true-value="'21'">
+                                0</md-checkbox>
+                        </a>
+                    </div>
+                    <div class="col-xs-1">
+                        <a class="ketchup"
+                           title='"Khách hàng không ủng hộ"'>
+                            <md-checkbox class="survey-question score answer6" ng-model="survey.answer6"   ng-true-value="'6'" >
+                                1</md-checkbox>
+                        </a>
+                    </div>
+                    <div class="col-xs-1" >
+                        <a class="ketchup"
+                           title='"Khách hàng không ủng hộ"'>
+                            <md-checkbox class="survey-question score answer6" ng-model="survey.answer6"   ng-true-value="'7'" >
+                                2</md-checkbox>
+                        </a>
+                    </div>
+                    <div class="col-xs-1">
+                        <a class="ketchup"
+                           title='"Khách hàng không ủng hộ"'>
+                            <md-checkbox class="survey-question score answer6" ng-model="survey.answer6"   ng-true-value="'8'" >
+                                3</md-checkbox>
+                        </a>
+                    </div>
+                    <div class="col-xs-1">
+                        <a class="ketchup"
+                           title='"Khách hàng không ủng hộ"'>
+                            <md-checkbox class="survey-question score answer6" ng-model="survey.answer6"   ng-true-value="'9'" >
+                                4</md-checkbox>
+                        </a>
+                    </div>
+                    <div class="col-xs-1">
+                        <a class="ketchup"
+                           title='"Khách hàng không ủng hộ"'>
+                            <md-checkbox class="survey-question score answer6" ng-model="survey.answer6"   ng-true-value="'10'" >
+                                5</md-checkbox>
+                        </a>
+                    </div>
+                    <div class="col-xs-1">
+                        <a class="ketchup"
+                           title='"Khách hàng không ủng hộ"'>
+                            <md-checkbox class="survey-question score answer6" ng-model="survey.answer6"   ng-true-value="'11'" >
+                                6</md-checkbox>
+                        </a>
+                    </div>
+                    <div class="col-xs-1 md-warn">
+                        <a class="ketchup"
+                           title='"Khách hàng vô cảm"'>
+                            <md-checkbox class="survey-question score answer6" ng-model="survey.answer6"   ng-true-value="'12'">
+                                7</md-checkbox>
+                        </a>
+                    </div>
+                    <div class="col-xs-1 md-warn">
+                        <a class="ketchup"
+                           title='"Khách hàng vô cảm'>
+                            <md-checkbox class="survey-question score answer6" ng-model="survey.answer6"   ng-true-value="'13'">
+                                8</md-checkbox></a>
+                    </div>
+                    <div class="col-xs-1 md-primary">
+                        <a class="ketchup"
+                           title='"Khách hàng ủng hộ"'>
+                            <md-checkbox class="survey-question score answer6" ng-model="survey.answer6"   ng-true-value="'14'">
+                                9</md-checkbox>
+                        </a>
+                    </div>
+                    <div class="col-xs-1 md-primary">
+                        <a class="ketchup"
+                           title='"Khách hàng ủng hộ"'>
+                            <md-checkbox class="survey-question score answer6" ng-model="survey.answer6"   ng-true-value="'15'">
+                                10</md-checkbox>
+                        </a>
+                    </div>
+                </div>
+                <!--</md-radio-group>-->
+
+            </div>
+            
+            <div class="col-xs-6" style="padding-top: 16px">
+                <div class="col-xs-2" style="padding-top: 17px;"><span class="question-title">Ghi chú</span></div>
+                <div class="col-xs-7" style="margin-left: -26px;">
+                    <textarea ng-model="survey.subnote6"  class="note-survey" style="    width: 487px;"></textarea>
+                </div>
+            </div>
+            <div class="col-xs-5" style="margin-left: 39px;">
+                <div class="col-xs-4 question-title" style="padding:28px 0px 0px 0px;">Lý do không đánh giá được</div>
+                <md-select ng-model="survey.extraQuestion6" ng-disabled="survey.answer6&&survey.answer6!=-1" ng-init="survey.extraQuestion6" class="eva-score-answer col-xs-8" placeholder="--Chọn lý do--">
+                    <md-option  value="22"> Chưa đủ thời gian trải nghiệm dịch vụ - không đánh giá</md-option>
+                    <md-option  value="23">KH hiểu ý câu hỏi nhưng không đồng ý cung cấp điểm</md-option>
+                    <md-option  value="24"> KH bận, không cung cấp được câu trả lời</md-option>
+                    <md-option  value="25">KH không hiểu ý câu hỏi survey nên không đưa ra được câu trả lời</md-option>
+                    <md-option  value="26">Không cần thực hiện NPS</md-option>
+                </md-select>
+            </div>
+        </div>
+
+    </div>
+    <div  ng-hide ="NPS"  class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <span class="fa fa-question-circle"></span> <span class="question-title">Câu 5</span>: Vậy FPT Telecom cần làm gì để anh/chị cho 10 điểm ạ? <span
+                    class="readmore-link"> <a class="ketchup tooltip-self"
+                                          title='"Có ổn định không, tốc độ phù hợp không ạ?"; "Truyền hình xem tốt không, có nét không, đã dùng chức năng xem lại chưa ạ?"; "Anh/Chị có cần hỗ trợ hoặc yêu cầu gì thêm không ạ?" hay "có phàn nàn gì không ạ?" …'>Xem Thêm</a>
+                </span>
+                <input type="hidden" name="" ng-init="survey.questionid_7 = 7" ng-model="survey.questionid_7" value="7">
+            </h3>
+        </div>
+        <div class="panel-body two-col">
+            <div name="radio-survey-6"  ng-model="survey.answer7"class="radio-survey col-xs-12">
+                <!--<md-radio-group ng-model="survey.answer7">-->
+                <div class="col-xs-2">
+                    <md-checkbox class="survey-question answer7 md-warn md-hue-1" ng-model="survey.answer7[1] "   ng-true-value="'27'" >
+                        TIN/PNC</md-checkbox>
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox class="survey-question answer7 md-warn md-hue-1" ng-model="survey.answer7[2]"   ng-true-value="'28'">
+                        Giá cước</md-checkbox>
+
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox class="survey-question answer7 md-warn md-hue-1" ng-model="survey.answer7[3]"   ng-true-value="'29'" >
+                        Chất lượng thiết bị</md-checkbox>
+
+                </div>
+                <div class="col-xs-3">
+                    <md-checkbox class="survey-question answer7 md-warn md-hue-1" ng-model="survey.answer7[4]"   ng-true-value="'30'" >
+                        Chất lượng đường truyền</md-checkbox>
+                </div>
+                <div class="col-xs-2">
+                    <md-checkbox class="survey-question answer7 md-warn md-hue-1" ng-model="survey.answer7[5]"   ng-true-value="'31'" >
+                        Sale</md-checkbox>
+
+                </div>
+                <div class="col-xs-1">
+                    <md-checkbox class="survey-question answer7 md-warn md-hue-1" ng-model="survey.answer7[6]"  ng-true-value="'32'"> 
+                        Khác</md-checkbox>
+
+                </div>
+            </div>
+           <div class="col-xs-6" style="padding-top: 16px">
+                <div class="col-xs-2" style="padding-top: 17px;"><span class="question-title">Ghi chú</span></div>
+                <div class="col-xs-7" style="margin-left: -26px;">
+                    <textarea ng-model="survey.subnote7"  class="note-survey" style="    width: 487px;"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('.not-rate').click(function () {
+            $('.toggle').css('display', 'inline-block');
+
+        })
+
+
+    });
+</script>

@@ -1,0 +1,186 @@
+<md-dialog aria-label="Thông tin checklist"  ng-cloak>
+    <form name="form_contact" required novalidate>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Tạo checklist</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="hide()">
+                    <md-tooltip>Đóng</md-tooltip>
+                    <md-icon class="md-default-theme material-icons">&#xE5CD;</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content" style="white-space: normal !important;">
+                <div class="col-xs-12 row">
+                    <div class="col-xs-2" style="line-height: 34px">
+                        Tên người tạo:
+                    </div>
+                    <div class="col-xs-7" style="margin-left: 47px; margin-top: 8px;">
+                        <input readonly="true" size="50" required ng-model="CL.sCreateBy" name="contactName" placeholder="Tên người liên hệ">
+                    </div>
+
+                </div>
+                <div class="col-xs-12 row" style="margin-top: 45px;">
+                    <div class="col-xs-2" style="    padding-left: 16px;">Chọn loại sự cố</div>
+                    <div class="col-xs-7">
+                        <md-select style=' padding: 0px;
+                                   margin: -10px 0px 19px;' name="incident_note" ng-model="CL.iInit_Status" placeholder="Chọn loại sự cố..." required>
+                            <md-option ng-value="4">Không có tín hiệu</md-option>
+                            <md-option ng-value="5">Chương trình thay Modem</md-option>
+                            <md-option ng-value="8">Tín hiệu tốt, không IPWan</md-option>
+                            <md-option ng-value="9">Tín hiệu tốt, đi net chậm/Up-Down chậm</md-option>
+                            <md-option ng-value="12">Trời mưa rớt mạng (DSL)</md-option>
+                            <md-option ng-value="17">Lỗi thiết bị</md-option>
+                            <md-option ng-value="18">Lỗi Ivoice (nghe / nói / tone)</md-option>
+                            <md-option ng-value="21">Game lag</md-option>
+                            <md-option ng-value="23">Theo yêu cầu KH</md-option>
+                            <md-option ng-value="45">Không kết nối được wifi</md-option>
+                            <md-option ng-value="46">Kết nối được wifi nhưng chập chờn</md-option>
+                            <md-option ng-value="47">Kết nối được wifi nhưng net chậm</md-option>
+                            <md-option ng-value="48">Truy cập internet Quốc tế chập chờn</md-option>
+                            <md-option ng-value="49">Tín hiệu Tốt, không truy cập được</md-option>
+                            <md-option ng-value="50">Tín hiệu không ổn định, suy hao không đạt chuẩn</md-option>
+                            <md-option ng-value="51">Tín hiệu tốt không IP wan - Mất cấu hình</md-option>
+                            <md-option ng-value="52">Tín hiệu tốt không IP wan - Cấu hình đúng</md-option>
+                            <md-option ng-value="53">Tín hiệu tốt, vào mạng chập chờn</md-option>
+                            <md-option ng-value="54">Modem mất nguồn</md-option>
+                            <md-option ng-value="55">Modem lỗi wifi ( không có đèn WF)</md-option>
+                            <md-option ng-value="56">Converter mất nguồn</md-option>
+                            <md-option ng-value="57">LAN lỗi</md-option>
+                            <md-option ng-value="58">Camera</md-option>
+                            <md-option ng-value="59">KH không hợp tác</md-option>
+                        </md-select>
+                    </div>
+                    <div style="color: red" class="col-xs-offset-2 col-xs-7 row" ng-show="incidentflag == 1 && !CL.iInit_Status" ng-init="incidentflag = 0">Vui lòng chọn loại sự cố</div>
+                </div>
+                <div class="col-xs-12 row" >
+                    <div class="col-xs-2">Ghi chú</div>
+                    <div class="col-xs-7">
+                        <textarea name="des" style="width: 541px" placeholder="Ghi chú" ng-model="CL.sDescription" required></textarea>
+                    </div>
+                    <div style="color: red" class="col-xs-offset-2 col-xs-7 row" ng-show="desflag == 1 && !CL.sDescription" ng-init="desflag = 0">Vui lòng nhập ghi chú</div>
+                </div>
+                <div class="col-xs-12 row" style="margin-top: 17px;">
+                    <div class="col-xs-2" style="margin-top: 10px;">Chọn loại Modem</div>
+                    <div class="col-xs-7">
+                        <md-select style='    padding: 0px;
+                                   margin: 0px;
+                                   ' name="modem_type" ng-model="CL.iModemType" ng-init="CL.iModemType = 13" placeholder="Chọn loại Modem..." required>
+                            <md-option ng-value="6">Zyxel 4 port </md-option>
+                            <md-option ng-value="14">Zyxel 1 port </md-option>
+                            <md-option ng-value="15">Zyxel 4 port Wifi</md-option>
+                            <md-option ng-value="16">Zyxel 6 port</md-option>
+                            <md-option ng-value="17">Simmens 4 port </md-option>
+                            <md-option ng-value="18">Comtrend 6 port </md-option>
+                            <md-option ng-value="19">Commend 6 port Wifi </md-option>
+                            <md-option ng-value="20">Commend 4 port Wifi</md-option>
+                            <md-option ng-value="13">Khac</md-option>
+                        </md-select>
+                    </div>
+                      <div style="color: red" class="col-xs-offset-2 col-xs-7 row" ng-show="modemflag == 1 && !CL.iModemType" ng-init="modemflag = 0">Vui lòng chọn loại sự cố</div>
+                </div>
+                <!--                <md-input-container style='       padding: 0px;
+                                                    margin: 0px;
+                                                    height: 38px;
+                                                    '>-->
+                <div class="col-xs-12 row">
+                    <div class="col-xs-2" style="margin-top: 10px;">Đối tác</div>
+                    <div class="col-xs-7">
+                        <input readonly="true"  size="50"  ng-model="CL.Supporter" title="Gọi store/api" name="contactName" placeholder="Đối tác">
+                    </div>
+                </div>
+                <!--</md-input-container>-->
+                <!--                <div class="col-xs-12" style="    margin-top: -40px;    padding-left: 0px;">
+                                    <label class="col-xs-3" style="float: left;padding-left: 28px;">
+                                        INDOOR
+                                    </label>
+                                    <md-checkbox   style="float: left" class="col-xs-5 survey-question score answer6" ng-model="CL.OwnerType" ng-init="CL.OwnerType='1'"   ng-true-value="'2'" ng-false-value="'1'" >
+                                        Gọi store/api</md-checkbox>
+                                </div>-->
+                <!--                <md-input-container style='       padding: 0px;
+                                                    margin: 0px;
+                                                    height: 38px;
+                                                    '>-->
+                <div class="col-xs-12 row">
+                    <div class="col-xs-2">Tổ bảo trì</div>
+                    <div class="col-xs-7">
+                        <input readonly="true" size="50"  ng-model="CL.SubSupporter" title="Gọi store/api"  name="contactName" placeholder="Tổ bảo trì">
+                    </div>
+                </div> 
+                <!--</md-input-container>-->
+                <div class="col-xs-12 row"  style="line-height: 21px; margin-top: 13px;">
+                    <label class="col-xs-3" style="padding-left: 28px;">
+                        Phan cong cho Sub
+                    </label>
+                    <md-checkbox  class="col-xs-5" ng-model="CL.bitSubAssign" ng-init="CL.bitSubAssign = '0'"   ng-true-value="'1'" ng-false-value="'0'" >
+                    </md-checkbox>
+                </div>
+                <div class="col-xs-12 row" style="line-height: 24px;">
+                    <label class="col-xs-3" style="padding-left: 28px;">
+                        Upgrade
+                    </label>
+                    <md-checkbox  class=" col-xs-5" ng-model="CL.bitUpgrade" ng-init="CL.bitUpgrade = '0'"   ng-true-value="'1'" ng-false-value="'0'" >
+                    </md-checkbox>
+                </div>
+                <div class="col-xs-12 row" style="line-height: 7px;" >
+                    <label class="col-xs-3" style="padding-left: 28px;">
+                        ESChecklist
+                    </label>
+                    <md-checkbox  class="col-xs-5" ng-model="CL.bitCLElectric" ng-init="CL.bitCLElectric = 0"    ng-true-value="1" ng-false-value="0" >
+                    </md-checkbox>
+                </div>
+                <div class="col-xs-12 row" style="    margin-top: 10px;">
+                    <div class="col-xs-2">Ngày hẹn</div>
+                    <div class="col-xs-7">
+                        <input size="50"  ng-model="AD.AppointmentDate" title="Ngày hẹn"  name="dateApoint"  datepickerclient ng-change="resetAP()">
+                    </div>
+                </div> 
+
+
+
+                <div class="col-xs-12 row" style="line-height: 7px;    margin-top: 16px;" >
+                    <label class="col-xs-3" style="padding-left: 28px;">
+                        KH hẹn
+                    </label>
+                    <md-checkbox ng-change="getDateInfo()"  class="col-xs-5" ng-model="client" >
+                    </md-checkbox>
+                </div>
+                <div class="col-xs-12 row" style="line-height: 7px;    margin-top: 16px;" >
+                    <table border='1' style="    width: 644px;
+                           height: 172px;
+                           text-align: center;" ng-show='AP'>
+
+                        <tr><td>Múi giờ</td><td>Số ca</td><td>Năng lực</td></tr>
+                        <!--<md-radio-group ng-model="CL.timezone">-->
+                        <tr ng-repeat="s in AP| filter:query as filtered">
+                            <td> <md-checkbox ng-model="AD.Timezone" ng-true-value="'{{s.Timezone}}'" ng-disabled="s.TimezoneCode == -1 || (CL.iInit_Status == 4 && (s.TimezoneCode18 == 19 || s.TimezoneCode18 == 21))">{{s.Timezone}}</md-checkbox></td> <td>{{s.TimeCount}}</td> <td>{{s.TimezoneAbility}}</td>
+                        </tr>
+                        <!--</md-radio-group>-->
+                    </table>
+                </div>
+                     <div style="color: red" class="col-xs-offset-2 col-xs-7 row" ng-show="assignflag == 1 && !AD.Timezone" ng-init="assignflag = 0">Vui lòng chọn múi thời gian phân công</div>
+                <div class="col-xs-12">
+                    <md-button ng-click="sendCL()" class="md-primary md-raised" style="margin-right:20px;">
+                        Tạo CheckList
+                    </md-button>
+                </div>
+
+
+                <input type="hidden" ng-model="CL.DeptID">
+                <input type="hidden" ng-model="CL.iObjId">
+                <input type="hidden" ng-model="CL.iType">
+                <input type="hidden" ng-model="CL.RequestFrom">
+                <input type="hidden" ng-model="CL.OwnerType">
+
+                <input type="hidden" ng-model="AD.isChange" ng-init="AD.isChange = 1">
+                <input type="hidden" ng-model="AD.AppointmentConfirm" ng-init="AD.AppointmentConfirm = 2">
+                <input type="hidden" ng-model="AD.Department" ng-init="AD.Department = 1">
+
+            </div>
+
+        </md-dialog-content>
+
+    </form>
+</md-dialog>

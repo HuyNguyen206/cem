@@ -1,0 +1,36 @@
+<?php
+
+return [
+    'Index' => 'List',
+    'Create' => 'Create',
+    'Edit' => 'Edit',
+    'Create new role' => 'Create new role',
+    'Edit role' => 'Edit role',
+    'Roles' => 'Roles',
+    'List roles' => 'List roles',
+    'Input here' => 'Input here',
+    'Name' => 'Name',
+    'Description' => 'Description',
+    'require name' => 'Please file role name',
+    'Create successful' => 'Create successful',
+    'Create failed' => 'Create failed',
+    'Deleted successfully' => 'Deleted successfully',
+    'Role' => 'Role',
+    'You wanna delete role' => 'You wanna delete role',
+    'will be deleted and cannot be recover' => 'will be deleted and cannot be recover',
+    'Level' => 'Level',
+
+    'Exist' => 'Exist',
+    'New' => 'New',
+    'NoGroupExist' => 'No group exist',
+    'PleaseChooseOneGroup' => 'Please choose one group',
+    'GroupDescription' => 'Group description',
+    'Lower' => 'Lower',
+    'Equal' => 'Equal',
+    'Group' => 'Group',
+
+    'YouDoNotHavePermissionToCreateNewRoleEqualOrHigherThanYourLevel' => "You don't have permission to create new role equal or higher than your level",
+    'TheGroupNameIsNotExist' => "The group name isn't exist",
+    'GroupNameCanNotBeBlank' => "Group name can't be blank",
+    'PleaseChooseOneGroupOrCreateNewGroup' => 'Please choose one group or create new group',
+];

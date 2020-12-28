@@ -1,0 +1,77 @@
+<md-dialog aria-label="Thông tin người liên hệ"  ng-cloak style="    min-width: 713px !important;">
+    <form name="form_contact" required novalidate>
+        <md-toolbar style="min-height: 0px !important;">
+            <div class="md-toolbar-tools" style="height: 39px !important;">
+                <h2>Thông tin người liên hệ</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-tooltip>Đóng</md-tooltip>
+                    <md-icon class="md-default-theme material-icons">&#xE5CD;</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+<!--        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-input-container>
+                    <input size="50" required ng-model="contactName" name="contactName" placeholder="Tên người liên hệ">
+                    <div ng-show="form_contact.contactName.$dirty && form_contact.contactName.$invalid">
+                        <div ng-message="required" ng-show="form_contact.contactName.$error.required">Vui lòng nhập tên người liên hệ.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container>
+                    <input size="50" required ng-model="contactPhone" name="contactPhone" placeholder="Số điện thoại" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/">
+                    <div ng-show="form_contact.contactPhone.$dirty && form_contact.contactPhone.$invalid" >
+                        <div ng-message="required" ng-show="form_contact.contactPhone.$error.required">Vui lòng nhập số điện thoại.</div>
+                        <div ng-message="pattern">Vui lòng nhập kiểu số điện thoại</div>
+                    </div>
+                </md-input-container>
+
+                <md-select name="sel_relation" ng-model="contactRelationship" placeholder="Chọn mối quan hệ..." required>
+                    <md-option ng-value="1">Cha</md-option>
+                    <md-option ng-value="2">Mẹ</md-option>
+                    <md-option ng-value="3">Anh</md-option>
+                    <md-option ng-value="4">Chị</md-option>
+                    <md-option ng-value="5">Em</md-option>
+                    <md-option ng-value="6">Khác</md-option>
+                </md-select>
+            </div>
+        </md-dialog-content>-->
+
+<!--        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="cancel()">
+                Bỏ qua
+            </md-button>
+            <md-button ng-click="updateContact()" ng-disabled="form_contact.$invalid" style="margin-right:20px;">
+                Cập nhật
+            </md-button>
+        </md-dialog-actions>
+    --></form>
+    <div style="    margin: 0px 25px 25px 25px;" ng-controller="contactCtrl">
+        <!--<h4 >Người liên hệ</h4>-->
+        <table id="tableContact" border="1" style="font-size: 14px !important;" class="table table-hover table-mc-light-blue">
+            <thead>
+                <tr>
+                    <th>Người liên hệ</th>
+                    <th>Số ĐT</th>
+                    <th>Mối quan hệ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-show="displayContact" style="text-align: center"><td colspan="3">Không có liên hệ nào</td></tr>
+                <tr  ng-click="loadInfoContact($event)" ng-hide="displayContact" ng-repeat="info in data" ng-switch on="info.contact_relationship">
+                    <td>{{info.contact_name}}</td>
+                    <td>{{info.contact_phone}}</td>
+                    <td ng-switch-when="1">Ba mẹ</td>
+                    <td ng-switch-when="2">Anh chị em</td>
+                    <td ng-switch-when="3">Bạn bè</td>
+                    <td ng-switch-when="4">Chủ hợp đồng</td>
+                    <td ng-switch-when="5">Khác</td>
+                    <td ng-switch-default>Khác</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</md-dialog>
